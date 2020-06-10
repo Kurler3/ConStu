@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DailyTask</string>
+    <string name="welcome_test">Welcome</string>
+    <string name="welcome_text2">What do you have to get done today?</string>
+    <string name="quote1">If you don\'\t fail, you aren\'\t doing it right</string>
+    <string name="dateText">currentTimeDisplayed</string>
+    <string name="notebtn_text">Weekly Notes</string>
+    <string name="todayToDoBtn">Today\'s Tasks</string>
+</resources>
