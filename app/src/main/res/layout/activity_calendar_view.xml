@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".CalendarView">
+
+    <LinearLayout
+        android:id="@+id/calendarLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="175dp"
+        android:background="@drawable/calendarstyle">
+
+        <CalendarView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"></CalendarView>
+
+    </LinearLayout>
+
+    <Button
+        android:background="@drawable/calendar_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
+        android:text="Save Date"
+        android:textColor="#FFF"
+
+        />
+
+
+</LinearLayout>

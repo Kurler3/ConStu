@@ -2,7 +2,9 @@ package com.miguel.dailytask;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
 import java.text.SimpleDateFormat;
@@ -21,6 +23,14 @@ public class Notes extends AppCompatActivity {
         listAdapter=new currentWeekAdapter(this,currentWeek());
         weekDisplay.setAdapter(listAdapter);
     }
+    public void changeWeek(View v){
+         //launches the calendar activity  and returns the day choose by the user
+        Intent i = new Intent(this, CalendarView.class);
+        startActivity(i);
+
+        //after having the day choosen by the user, it should update the list on this class's layout.
+    }
+
 
     public static String[] currentWeek(){ //returns a string array with the dates from the start to the end of the current week
         String[] datesCurrentWeek = new String[7];

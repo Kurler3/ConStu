@@ -6,4 +6,6 @@
     <string name="dateText">currentTimeDisplayed</string>
     <string name="notebtn_text">Weekly Notes</string>
     <string name="todayToDoBtn">Today\'s Tasks</string>
+    <string name="changeWeekBtn">Change Week</string>
+    <string name="currentWeekBtn">Change To Current Week</string>
 </resources>
