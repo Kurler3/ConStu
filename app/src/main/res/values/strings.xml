@@ -8,4 +8,5 @@
     <string name="todayToDoBtn">Today\'s Tasks</string>
     <string name="changeWeekBtn">Change Week</string>
     <string name="currentWeekBtn">Change To Current Week</string>
+    <string name="saveChangesBtn">Save</string>
 </resources>

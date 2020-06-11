@@ -20,9 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private static final SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
     private static final SimpleDateFormat dayFormat = new SimpleDateFormat("dd-MM-YYYY");
     private static boolean isInterrupted;
-    TextView test;
+
     TextView welcomeText;
-    TextView welcomeText2;
     TextView currentDate;
     TextView currentTimeDisplay;
     private GestureDetector detector;
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         setContentView(R.layout.activity_main);
         welcomeText = (TextView) findViewById(R.id.welcomeText);
         welcomeText.setText("Welcome, Miguel");
-        welcomeText2 = (TextView) findViewById(R.id.welcomeText2);
+
         currentDate = (TextView) findViewById(R.id.currentDateText);
         currentTimeDisplay = (TextView) findViewById(R.id.currentTime);
         //formatting the current date to be able to display it in the text View
