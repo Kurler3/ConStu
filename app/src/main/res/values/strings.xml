@@ -7,6 +7,10 @@
     <string name="notebtn_text">Weekly Notes</string>
     <string name="todayToDoBtn">Today\'s Tasks</string>
     <string name="changeWeekBtn">Change Week</string>
-    <string name="currentWeekBtn">Change To Current Week</string>
+    <string name="currentWeekBtn">Change Current</string>
     <string name="saveChangesBtn">Save</string>
+    <string name="todays_task_title">TextView</string>
+    <string name="additional_notes_btn">Additional Notes</string>
+    <string name="edit_Task_List_btn">Add Task</string>
+    <string name="removeTaskBtn">Remove Task</string>
 </resources>

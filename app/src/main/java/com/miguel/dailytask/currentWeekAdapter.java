@@ -22,7 +22,6 @@ public class currentWeekAdapter extends ArrayAdapter<String> {
     TextView item;
     private static final SimpleDateFormat dayFormat = new SimpleDateFormat("dd-MM-YYYY");
 
-
     public currentWeekAdapter(@NonNull Context context, String[] weekList) {
         super(context,R.layout.activity_current_week_adapter,weekList);
     }
@@ -35,12 +34,11 @@ public class currentWeekAdapter extends ArrayAdapter<String> {
         item = (TextView) customView.findViewById(R.id.dateDisplay);
         String date = getItem(position);
         item.setText(date);
-
-        if(item.getText().toString()==currentDate()) //highlight the current day(not working)
+        if(item.getText().toString().equals(Notes.chosenDate)) //highlight the current day(not working)
         {
-            item.setHighlightColor(Color.BLUE);
+           item.setBackgroundColor(Color.BLUE);
         }
-
+        item.setText(date);
         return customView;
     }
 

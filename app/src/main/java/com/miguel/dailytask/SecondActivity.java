@@ -21,4 +21,7 @@ public class SecondActivity extends AppCompatActivity {
         Intent i = new Intent(this, Notes.class);
         startActivity(i);
     }
+    public void todayTask(View v){
+        startActivity(new Intent(this,TodayTask.class));
+    }
 }
