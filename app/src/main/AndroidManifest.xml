@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TodayTaskListAdapter"></activity>
+        <activity android:name=".AddTaskButton" />
+        <activity android:name=".TodayTaskListAdapter" />
         <activity android:name=".TodayTask" />
         <activity android:name=".CalendarAct" />
         <activity android:name=".SecondActivity" />

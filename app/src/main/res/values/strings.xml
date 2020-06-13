@@ -13,4 +13,5 @@
     <string name="additional_notes_btn">Additional Notes</string>
     <string name="edit_Task_List_btn">Add Task</string>
     <string name="removeTaskBtn">Remove Task</string>
+    <string name="saveTaskTitleBtn">Save</string>
 </resources>
