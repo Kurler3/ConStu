@@ -23,7 +23,6 @@ public class TodayTaskListAdapter extends ArrayAdapter<String> {
     Button removeTaskBtn;
     public TodayTaskListAdapter(@NonNull Context context, ArrayList<String> resource) {
         super(context,R.layout.activity_today_task_list_adapter, resource);
-
     }
 
     @NonNull

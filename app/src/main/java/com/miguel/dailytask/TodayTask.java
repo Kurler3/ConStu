@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -21,7 +22,7 @@ public class TodayTask extends AppCompatActivity {
     TextView title;
     ListView taskList;
     Button addTaskBtn;
-
+    int indexOfSelectedItem=-1; //doesnt really matter what the initial value is tbh
     static ArrayList<String> tasksTitles;
     ArrayList<Boolean> checked;
     private static final SimpleDateFormat dayFormat = new SimpleDateFormat("dd-MM-YYYY");
@@ -40,9 +41,17 @@ public class TodayTask extends AppCompatActivity {
 
         taskList = (ListView) findViewById(R.id.taskList);
         //set custom adapter
+        taskList.setAdapter(new TodayTaskListAdapter(this,tasksTitles));
+        taskList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                indexOfSelectedItem=position;
+            }
+        });
 
-
-
+    }
+    public void updateTaskList(){
+        taskList.setAdapter(new TodayTaskListAdapter(this,tasksTitles));
     }
     public void addTask(View v){
         //launches small pop up that takes input for a task title (startActivityForResult)
@@ -50,6 +59,14 @@ public class TodayTask extends AppCompatActivity {
     }
     public void removeTask(View v){
         //removes the selected item in the list(it is highlighted)
+        String taskToBeRemoved;
+        if(indexOfSelectedItem!=-1) {
+            taskToBeRemoved = tasksTitles.get(indexOfSelectedItem);
+            Intent i = new Intent(this, RemoveTaskPopUp.class); //launches a small pop to confirm
+            i.putExtra("title",taskToBeRemoved);
+            startActivityForResult(i,REMOVE_KEY);
+        }
+
     }
 
     @Override
@@ -59,7 +76,19 @@ public class TodayTask extends AppCompatActivity {
             String inputedTaskTitle = data.getStringExtra("input");
             tasksTitles.add(inputedTaskTitle);
             listIsEmpty.setText("");
-            taskList.setAdapter(new TodayTaskListAdapter(this,tasksTitles)); //updates the list
+            updateTaskList(); //updates the list
+        }
+        else if(requestCode==REMOVE_KEY){
+            int confirm_button_choice = (int) data.getIntExtra("confirm",2);
+            if(confirm_button_choice==RemoveTaskPopUp.REMOVE_CONFIRMED){
+               tasksTitles.remove(indexOfSelectedItem);
+               if(tasksTitles.isEmpty()){
+                 listIsEmpty.setText("List is empty");
+               }
+               updateTaskList();
+            }
+
+
         }
 
 
